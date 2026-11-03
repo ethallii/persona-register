@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PERSONAForge - etth</title>
+    <link rel="stylesheet" href="..static/css/estilo.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>PERSONA Forge</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" id="nav-home" class="active">Mural</a></li>
+                <li><a href="#" id="nav-criar">Criar do Zero</a></li>
+                <li><a href="#" id="nav-perfil">Acervo Geral</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="sec-home" class="view-section">
+            <div class="profile-summary">
+                <div class="avatar"></div>
+                <div class="profile-info">
+                    <h2>@CriadorGachi:.</h2>
+                    <p>Gerencie suas criações originais em tempo real:.</p>
+                </div>
+            </div>
+            <hr>
+            
+            <div class="action-buttons-group" style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                <button id="quick-char" style="background-color: #ff3333; color: white;">+ Novo Personagem</button>
+                <button id="quick-camp" style="background-color: #3333ff; color: white;">+ Nova Campanha</button>
+                <button id="quick-story" style="background-color: #33ff33; color: black;">+ Nova História</button>
+            </div>
+
+            <h3>Minhas Pastas Ativas</h3>
+            <div class="pinterest-grid">
+                <div class="folder-card"><div class="card-cover"></div><h4>Meus Personagens (OCs)</h4></div>
+                <div class="folder-card"><div class="card-cover"></div><h4>Minhas Campanhas</h4></div>
+                <div class="folder-card"><div class="card-cover"></div><h4>Minhas Histórias</h4></div>
+            </div>
+        </section>
+
+        <section id="sec-criar" class="view-section hidden">
+            <div class="form-box">
+                <h3 id="form-title">Adicionar ao Sistema</h3>
+                <form id="cadastro-form" action="pages/salvar.php" method="POST">
+                    
+                    <div class="form-group">
+                        <label for="item-nome">Nome do Registro:.</label>
+                        <input type="text" name="nome" id="item-nome" placeholder="Nome do elemento:." maxlength="100" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item-categoria">Categoria do Item:.</label>
+                        <select name="categoria" id="item-categoria" required>
+                            <option value="" disabled selected>Selecione o tipo:.</option>
+                            <option value="Personagem">Personagem (OC):.</option>
+                            <option value="Campanha">Campanha de RPG:.</option>
+                            <option value="História">História Original:.</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="item-detalhes">Detalhes / Descrição Curta:.</label>
+                        <input type="text" name="detalhes" id="item-detalhes" placeholder="Escreva notas curtas:." required>
+                    </div>
+
+                    <button type="submit">Salvar Registro</button>
+                </form>
+                <div id="form-feedback"></div>
+            </div>
+        </section>
+
+        <section id="sec-perfil" class="view-section hidden">
+            <div class="table-box">
+                <h3>Acervo do Usuário</h3>
+                <div id="tabela-container"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 RPForge. Desenvolvido em colaboração com a IA **Gemini**. (E o cabeçote do etth)</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
