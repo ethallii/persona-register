@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace; /* Fonte crua estilo máquina */
+}
+
+body {
+    background-color: #0d0d0d; /* Fundo escuro profundo */
+    color: #ffffff; /* Texto totalmente branco de alto contraste */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupe a tela inteira */
+}
+
+/* HEADER: Layout alinhado por Flexbox com linha divisória de alta espessura */
+header {
+    background-color: #0d0d0d;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #ffffff; /* Traço marcante estilo mangá */
+}
+
+.logo h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -2px; /* Letras coladas para dar personalidade */
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    color: #777777;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Estado visual do menu ao passar o mouse ou estar na página ativa */
+nav ul li a:hover, nav ul li a.active {
+    color: #ff3333; /* Vermelho marcador marcante */
+    text-decoration: underline;
+}
+
+/* CONTAINER DO CONTEÚDO CENTRAL */
+main {
+    flex: 1;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* CLASSES DE VISIBILIDADE: Controlam o comportamento de troca de abas (SPA) */
+.view-section {
+    display: block;
+}
+
+.hidden {
+    display: none !important; /* Força a ocultação da seção */
+}
+
+/* PAINEL DE PERFIL DO USUÁRIO */
+.profile-summary {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    background-color: #1a1a1a;
+    border: 3px solid #ffffff; /* Sem cantos arredondados, visual seco */
+}
+
+.profile-info h2 {
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+.profile-info p {
+    color: #888888;
+    font-size: 0.85rem;
+}
+
+hr {
+    border: 0;
+    height: 4px;
+    background: #ffffff;
+    margin-bottom: 2rem;
+}
+
+/* BOX BRUTALISTA DE CONTEÚDO (Formulários e Tabelas) */
+.form-box, .table-box {
+    background-color: #111111;
+    padding: 2rem;
+    border: 3px solid #ffffff; /* Caixas totalmente contornadas */
+}
+
+h3 {
+    background-color: #ffffff;
+    color: #000000;
+    display: inline-block;
+    padding: 0.3rem 0.6rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+/* ELEMENTOS DE FORMULÁRIOS */
+.form-group {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+input, select {
+    background-color: #0d0d0d;
+    border: 2px solid #444444;
+    color: #ffffff;
+    padding: 0.7rem;
+    outline: none;
+}
+
+input:focus, select:focus {
+    border-color: #ff3333; /* Destaca a borda em foco com vermelho */
+}
+
+/* BOTÕES DE AÇÃO */
+button {
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid #ffffff;
+    padding: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+
+button:hover {
+    background-color: #ff3333;
+    color: #ffffff;
+    border-color: #ff3333;
+}
+
+/* Botões de ação da tabela (sobrescrevem o width: 100% do button global) */
+.btn-edit, .btn-delete {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    padding: 0.3rem 0.5rem;
+    border: 1px solid transparent;
+    width: auto;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-edit { 
+    color: #33ff33; 
+    border-color: #33ff33; 
+}
+.btn-edit:hover { 
+    background-color: #33ff33; 
+    color: #000000; 
+}
+
+.btn-delete { 
+    color: #ff3333; 
+    border-color: #ff3333; 
+    margin-left: 8px; 
+}
+.btn-delete:hover { 
+    background-color: #ff3333; 
+    color: #ffffff; 
+}
+
+/* LAYOUT DE TABELAS */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Cola as bordas das células */
+}
+
+th, td {
+    padding: 0.8rem;
+    border: 1px solid #444444;
+    font-size: 0.85rem;
+    text-align: left;
+}
+
+th {
+    background-color: #1a1a1a;
+    border-bottom: 3px solid #ffffff;
+    text-transform: uppercase;
+}
+
+/* GRID ESTILO MOSAICO PINTEREST */
+.pinterest-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.folder-card {
+    background-color: #111111;
+    border: 2px solid #333333;
+    cursor: pointer;
+}
+
+.folder-card:hover {
+    border-color: #ff3333;
+}
+
+.card-cover {
+    height: 130px;
+    background-color: #1f1f1f;
+    border-bottom: 2px solid #333333;
+}
+
+.folder-card h4 {
+    padding: 0.8rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+/* RODAPÉ ESTILIZADO */
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #444444;
+    font-size: 0.75rem;
+    border-top: 4px solid #ffffff;
+    margin-top: auto;
+}
+
+/* REQUISITO: MEDIA QUERY PARA TRATAR RESPONSIVIDADE (Telas menores que 600px) */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column; /* Menu empilha verticalmente no celular */
+        gap: 1rem;
+        text-align: center;
+    }
+    .pinterest-grid {
+        grid-template-columns: 1fr; /* Mosaico vira uma coluna única em telas pequenas */
+    }
+}
